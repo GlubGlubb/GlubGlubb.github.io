@@ -14,17 +14,18 @@ if (navigator.mediaDevices.getUserMedia) {
     });
 }
 
-var model = undefined;
 
+//COCO SSD
+var model = undefined;
 cocoSsd.load().then(function (loadedModel) {
   model = loadedModel;
   predict()
 });
 
 
-
 function predict()
 {
+
   // detect objects in the image.
   model.detect(video1).then(predictions => {
     draw(predictions);
@@ -43,6 +44,7 @@ function draw(predictions)
   ctx1.strokStyle = "Red"
   ctx1.fillStyle = "transparent"
   ctx1.strokeWidth = 5;
+  ctx1.font = "24px serif";
   ctx1.clearRect(0,0,canvas1.width,canvas1.height);
   ctx2.clearRect(0,0,canvas2.width,canvas2.height);
   
@@ -55,6 +57,11 @@ function draw(predictions)
     predictions[i]["bbox"][3]
     )
     ctx1.stroke();
+    ctx1.fillStyle = "red"
+    ctx1.fillText(predictions[i]["class"],predictions[i]["bbox"][0],predictions[i]["bbox"][1]-48 )
+    console.log(predictions[i]["class"],predictions[i]["bbox"][0],predictions[i]["bbox"][1])
+
+
   }
 
 }
