@@ -55,6 +55,7 @@ function draw(predictions)
     predictions[i]["bbox"][3]
     )
     ctx1.stroke();
+    document.getElementById("test").innerText = predictions[0]["class"];
   }
 
 }
