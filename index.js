@@ -3,6 +3,7 @@ function isMobile() {
     const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
     return isAndroid || isiOS;
   }
+  console.log('s')
   
   async function setupCamera() {
     const isPortrait = true; // do logic here
