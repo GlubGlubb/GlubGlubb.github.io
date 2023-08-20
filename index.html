@@ -6,13 +6,22 @@
     <title>VR</title>
 
     <style>
-        #videoElement
+        #videoElement1
         {
-            width: 100%;
+            width: 55%;
             height: 100%;
-            background-color: green;
             position: absolute;
             left:0%;
+            top:0%;
+            object-fit: cover;
+        }
+        #videoElement2
+        {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+            left:50%;
             top:0%;
         }
     </style>
@@ -22,11 +31,8 @@
 </head>
 <body>
     
-    <div id="container">
-
-        <video id="videoElement" autoplay="true"></video>
-
-    </div>
-
+    <video id="videoElement1" autoplay="true"></video>
+    <video id="videoElement2" autoplay="true"></video>
+        
 </body>
 </html>
